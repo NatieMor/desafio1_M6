@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+<div class="container">
+  <h1>Clientes</h1>
+  <p>
+    <%= link_to "Nuevo Cliente", new_client_path, class: "btn btn-success btn-sm" %>
+  </p>
+  <div id="clients">
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Edad</th>
+          <th scope="col">Pelicula arrendada</th>
+          <th scope="col">Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @clients.each do |client| %>
+          <tr>
+            <td scope="col"><%= client.id %></td>
+            <td scope="col"><%= client.name %></td>
+            <td scope="col"><%= client.age %></td>
+            <% if client.movie.nil?%>
+            <td scope="col"> No Tiene peliculas arrendadas </td>
+            <% else %>
+            <td scope="col"><%= client.movie.name %></td>
+            <% end %>
+            <td>
+              <div class="btn-group">
+                <%= link_to "Ver cliente", client, class: "btn btn-primary btn-sm" %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

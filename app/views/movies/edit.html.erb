@@ -1,0 +1,11 @@
+<h1>Editar Pelicula</h1>
+
+<%= render "form", movie: @movie %>
+
+<br>
+
+<div class= "btn-group">
+<button class=" btn btn-lg btn-info float-end border-dark me-2"><%= link_to "Mostrar Pelicula", @movie %></button>
+<button class=" btn btn-lg btn-info float-end border-dark"><%= link_to "Regresar a Peliculas", movies_path %></button>
+</div>
+

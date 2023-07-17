@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container">
+  <h1>Pelicula</h1>
+  <%= link_to "Nueva pelicula", new_movie_path, class: "btn btn-warning btn-l mb-2 border-dark"%>
+  <div id="movies">
+    <div class="row">
+      <% @movies.each do |movie| %>
+        <%= render movie %>
+      <% end %>
+    </div>
+  </div>
+</div>

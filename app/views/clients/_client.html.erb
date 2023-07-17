@@ -1,0 +1,34 @@
+<div id="<%= dom_id client %>">
+<table class="table table-success table-striped text-center">
+<thead>
+    <tr>
+      <th>ID</th>
+      <th>Cliente</th>
+      <th>Edad</th>
+      <th>Pelicula arrendada</th>
+      <th>Accion</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= client.id %></td>
+      <td><%= client.name %></td>
+      <td><%= client.age %></td>
+      <td>
+      <% if client.movie.nil?%>
+        No posee pelicula en arriendo
+      <% else %>
+        <%= client.movie.name %>
+      <% end %>
+      </td>
+      <td>
+        <div class="btn">    
+          <%= link_to "Editar", edit_client_path(client), class: "btn btn-warning btn-sm mb-2" %> 
+          <%= button_to "Eliminar", client , method: :delete, class: "btn btn-danger btn-sm" %>
+        </div>
+      </td>
+    </tr>
+   </tbody>
+  </table>
+
+ </div>

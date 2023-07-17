@@ -1,0 +1,11 @@
+<h1>Editar Cliente</h1>
+<table class="table table-bordered">
+<%= render "form", client: @client %>
+</table>
+
+<br>
+
+<div class= "btn btn-primary">
+<button class=" btn btn-lg btn-info float-end border-dark"> <%= link_to "mostrar", @client %></button> |
+<button class=" btn btn-lg btn-info float-end border-dark"><%= link_to "Regresar a Clientes", clients_path %></button> 
+</div>
